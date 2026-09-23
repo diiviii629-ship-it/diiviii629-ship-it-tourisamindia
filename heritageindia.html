@@ -1,0 +1,2458 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Heritage India - Culture & History</title>
+
+<style>
+
+/* ================================
+   BASIC SETTINGS
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff8ed;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    background: linear-gradient(135deg, #7b2d12, #d2691e);
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+header h1 {
+    font-size: 50px;
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 20px;
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+nav {
+    background: #3e1f0d;
+    padding: 18px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 25px;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    text-align: center;
+    padding: 55px 20px 30px;
+}
+
+.hero h2 {
+    color: #7b2d12;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 900px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* ================================
+   SEARCH
+================================ */
+
+.search-section {
+    text-align: center;
+    padding: 25px 20px 45px;
+}
+
+.search-section h2 {
+    color: #7b2d12;
+    margin-bottom: 20px;
+}
+
+#searchBox {
+    width: 65%;
+    max-width: 650px;
+    padding: 16px 22px;
+    border: 2px solid #d2691e;
+    border-radius: 30px;
+    font-size: 17px;
+    outline: none;
+}
+
+#searchBox:focus {
+    border-color: #7b2d12;
+}
+
+
+/* ================================
+   PLACES
+================================ */
+
+.places {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding-bottom: 70px;
+}
+
+.section-title {
+    text-align: center;
+    color: #7b2d12;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+
+/* ================================
+   3 PLACES IN EACH ROW
+================================ */
+
+.place-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+/* ================================
+   PLACE CARD
+================================ */
+
+.place-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.place-card:hover {
+    transform: translateY(-8px);
+}
+
+.place-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.place-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.place-info h3 {
+    color: #7b2d12;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+.place-info p {
+    color: #666;
+}
+
+
+/* ================================
+   ABOUT INDIA
+================================ */
+
+.about {
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto 70px;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+}
+
+.about h2 {
+    text-align: center;
+    color: #7b2d12;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 17px;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+
+/* ================================
+   DETAIL PAGES
+================================ */
+
+.detail-page {
+    display: none;
+    min-height: 100vh;
+    background: #fff8ed;
+}
+
+.detail-header {
+    background: linear-gradient(135deg, #7b2d12, #d2691e);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.detail-header h1 {
+    font-size: 46px;
+    margin-bottom: 12px;
+}
+
+.detail-header p {
+    font-size: 20px;
+}
+
+
+/* ================================
+   DETAIL CONTENT
+================================ */
+
+.detail-content {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto 70px;
+    background: white;
+    padding: 45px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.detail-content h2 {
+    color: #7b2d12;
+    font-size: 30px;
+    margin: 30px 0 15px;
+}
+
+.detail-content p {
+    font-size: 17px;
+    line-height: 1.9;
+    text-align: justify;
+    margin-bottom: 18px;
+}
+
+
+/* ================================
+   CONTENT + IMAGE SECTIONS
+================================ */
+
+.info-section {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin: 35px 0;
+}
+
+.info-section .text {
+    flex: 1;
+}
+
+.info-section .image {
+    flex: 1;
+}
+
+.info-section img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.18);
+}
+
+
+/* Reverse section */
+
+.info-section.reverse {
+    flex-direction: row-reverse;
+}
+
+
+/* ================================
+   LOCATION
+================================ */
+
+.location-box {
+    background: #fff0dc;
+    border-left: 6px solid #d2691e;
+    padding: 22px;
+    margin: 30px 0;
+    border-radius: 8px;
+}
+
+.location-box h3 {
+    color: #7b2d12;
+    margin-bottom: 8px;
+}
+
+
+/* ================================
+   FACT BOX
+================================ */
+
+.fact-box {
+    background: #f8e2c4;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.fact-box h3 {
+    color: #7b2d12;
+    margin-bottom: 12px;
+}
+
+.fact-box ul {
+    padding-left: 25px;
+}
+
+.fact-box li {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   BACK BUTTON
+================================ */
+
+.back-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 28px;
+    background: #7b2d12;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background: #d2691e;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background: #3e1f0d;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 7px;
+}
+
+
+/* ================================
+   SEARCH RESULT
+================================ */
+
+#noResult {
+    display: none;
+    text-align: center;
+    color: #7b2d12;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media(max-width: 850px) {
+
+    .place-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .info-section,
+    .info-section.reverse {
+        flex-direction: column;
+    }
+
+}
+
+
+@media(max-width: 600px) {
+
+    header h1 {
+        font-size: 35px;
+    }
+
+    .place-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #searchBox {
+        width: 95%;
+    }
+
+    .detail-content {
+        padding: 20px;
+    }
+
+    .detail-header h1 {
+        font-size: 35px;
+    }
+
+    .info-section img {
+        height: 250px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px 10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HOME PAGE
+====================================================== -->
+
+<div id="homePage">
+
+
+<header>
+
+<h1>🇮🇳 Heritage India</h1>
+
+<p>Culture • History • Art • Architecture</p>
+
+</header>
+
+
+<nav>
+
+<a onclick="showHome()">Home</a>
+
+<a href="#places">Heritage Places</a>
+
+<a href="#about">About India</a>
+
+</nav>
+
+
+<section class="hero">
+
+<h2>Discover India's Rich Heritage</h2>
+
+<p>
+India is a land of ancient civilizations, magnificent monuments,
+royal palaces, temples, forts, caves and diverse cultural traditions.
+Explore some of India's most important historical places and learn
+about their history, architecture and cultural importance.
+</p>
+
+</section>
+
+
+<section class="search-section">
+
+<h2>🔎 Search Heritage Places</h2>
+
+<input
+type="text"
+id="searchBox"
+placeholder="Search Taj Mahal, Hampi, Delhi..."
+onkeyup="searchPlaces()">
+
+</section>
+
+
+<section class="places" id="places">
+
+<h2 class="section-title">
+🏛️ Famous Heritage Places of India
+</h2>
+
+
+<div class="place-grid" id="placeGrid">
+
+
+<!-- 1 TAJ MAHAL -->
+
+<div class="place-card">
+
+<div onclick="showPlace('taj')">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Mahal%2C%20Agra%20India.jpg"
+alt="Taj Mahal">
+
+<div class="place-info">
+
+<h3>Taj Mahal</h3>
+
+<p>📍 Agra, Uttar Pradesh</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 2 HAMPI -->
+
+<div class="place-card">
+
+<div onclick="showPlace('hampi')">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Hampi%2C%20Karnataka%2C%20India%201.jpg"
+alt="Hampi">
+
+<div class="place-info">
+
+<h3>Hampi</h3>
+
+<p>📍 Karnataka</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 3 KONARK -->
+
+<div class="place-card">
+
+<div onclick="showPlace('konark')">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/KONARK%20SUN%20Temple.jpg"
+alt="Konark Sun Temple">
+
+<div class="place-info">
+
+<h3>Konark Sun Temple</h3>
+
+<p>📍 Odisha</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 4 RED FORT -->
+
+<div class="place-card">
+
+<div onclick="showPlace('redfort')">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Red%20Fort%20in%20Delhi%2003-2016%20img3.jpg"
+alt="Red Fort">
+
+<div class="place-info">
+
+<h3>Red Fort</h3>
+
+<p>📍 Delhi</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 5 QUTUB MINAR -->
+
+<div class="place-card">
+
+<div onclick="showPlace('qutub')">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Qutb%20Minar%20Delhi.jpg"
+alt="Qutub Minar">
+
+<div class="place-info">
+
+<h3>Qutub Minar</h3>
+
+<p>📍 Delhi</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 6 AJANTA -->
+
+<div class="place-card">
+
+<div onclick="showPlace('ajanta')">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Ajanta%20Caves%2C%20India.jpg"
+alt="Ajanta Caves">
+
+<div class="place-info">
+
+<h3>Ajanta Caves</h3>
+
+<p>📍 Maharashtra</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 7 ELLORA -->
+
+<div class="place-card">
+
+<div onclick="showPlace('ellora')">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Kailasa%20Temple%20at%20Ellora.jpg"
+alt="Ellora Caves">
+
+<div class="place-info">
+
+<h3>Ellora Caves</h3>
+
+<p>📍 Maharashtra</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 8 CHARMINAR -->
+
+<div class="place-card">
+
+<div onclick="showPlace('charminar')">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Charminar%20Hyderabad.jpg"
+alt="Charminar">
+
+<div class="place-info">
+
+<h3>Charminar</h3>
+
+<p>📍 Hyderabad, Telangana</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 9 MYSORE PALACE -->
+
+<div class="place-card">
+
+<div onclick="showPlace('mysore')">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Mysore%20Palace%20Mysore%20India.jpg"
+alt="Mysore Palace">
+
+<div class="place-info">
+
+<h3>Mysore Palace</h3>
+
+<p>📍 Mysuru, Karnataka</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 10 SANCHI -->
+
+<div class="place-card">
+
+<div onclick="showPlace('sanchi')">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Sanchi%20Stupa.jpg"
+alt="Sanchi Stupa">
+
+<div class="place-info">
+
+<h3>Sanchi Stupa</h3>
+
+<p>📍 Madhya Pradesh</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<p id="noResult">
+❌ No heritage place found.
+</p>
+
+</section>
+
+
+<section class="about" id="about">
+
+<h2>🇮🇳 About Indian Heritage</h2>
+
+<p>
+India has a rich heritage that has developed over thousands of years.
+It includes ancient monuments, temples, forts, palaces, caves,
+paintings, sculptures, music, dance, festivals and traditional arts.
+</p>
+
+<p>
+Every historical place tells a unique story about the rulers,
+artists, communities and cultures that shaped India's past.
+Preserving these places helps future generations understand India's
+history and cultural diversity.
+</p>
+
+</section>
+
+
+<footer>
+
+<h3>🇮🇳 Heritage India</h3>
+
+<p>Culture • History • Art • Architecture</p>
+
+<p>Created using HTML, CSS & JavaScript</p>
+
+</footer>
+
+</div>
+
+
+
+<!-- =====================================================
+     TAJ MAHAL
+====================================================== -->
+
+<div class="detail-page" id="taj">
+
+<div class="detail-header">
+
+<h1>🏛️ Taj Mahal</h1>
+
+<p>Agra, Uttar Pradesh, India</p>
+
+</div>
+
+
+<div class="detail-content">
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>About the Taj Mahal</h2>
+
+<p>
+The Taj Mahal is one of the most famous monuments in India.
+It is located on the southern bank of the Yamuna River in Agra,
+Uttar Pradesh. The monument is famous for its white marble,
+large central dome, four minarets and beautifully planned gardens.
+</p>
+
+<p>
+The Taj Mahal is part of a large architectural complex that
+includes the main mausoleum, mosque, guest house, gardens and
+entrance structures.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Mahal%2C%20Agra%20India.jpg"
+alt="Taj Mahal">
+
+</div>
+
+</div>
+
+
+<div class="location-box">
+
+<h3>📍 Location</h3>
+
+<p>
+Agra, Uttar Pradesh, India
+</p>
+
+</div>
+
+
+<div class="info-section reverse">
+
+<div class="text">
+
+<h2>📜 History</h2>
+
+<p>
+The Taj Mahal was commissioned by Mughal emperor Shah Jahan
+in memory of his wife Mumtaz Mahal. Construction began in the
+17th century and the complex was developed over a number of years.
+</p>
+
+<p>
+The monument became one of the greatest achievements of Mughal
+architecture and represents a combination of artistic influences
+from different regions.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Mahal%20Agra%20India%202025%2026.jpg"
+alt="Taj Mahal view">
+
+</div>
+
+</div>
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>🏛️ Architecture</h2>
+
+<p>
+The Taj Mahal is known for its balanced and symmetrical design.
+The central dome is surrounded by four minarets. The building
+uses white marble and contains detailed stone decoration,
+calligraphy and geometric patterns.
+</p>
+
+<p>
+The gardens and reflecting pools create a carefully planned
+visual arrangement leading toward the main monument.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Taj%20Mahal%20situated%20in%20Agra%2CIndia.jpg"
+alt="Taj Mahal architecture">
+
+</div>
+
+</div>
+
+
+<div class="fact-box">
+
+<h3>⭐ Interesting Facts</h3>
+
+<ul>
+
+<li>The Taj Mahal is located in Agra.</li>
+
+<li>It is an important example of Mughal architecture.</li>
+
+<li>The monument is constructed mainly using white marble.</li>
+
+<li>The complex contains gardens, a mosque and a guest house.</li>
+
+</ul>
+
+</div>
+
+
+<div class="info-section reverse">
+
+<div class="text">
+
+<h2>🌏 Cultural Importance</h2>
+
+<p>
+The Taj Mahal is an important symbol of India's architectural
+heritage. It attracts visitors from around the world and represents
+the artistic and architectural achievements of the Mughal period.
+</p>
+
+<p>
+Its detailed decoration, gardens and monumental design continue
+to make it one of India's most recognizable heritage sites.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Taj%20Mahal%2C%20Agra%2C%20India%20%2846800656644%29.jpg"
+alt="Taj Mahal garden">
+
+</div>
+
+</div>
+
+
+<button class="back-button" onclick="showHome()">
+⬅ Back to Heritage India
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     HAMPI
+====================================================== -->
+
+<div class="detail-page" id="hampi">
+
+<div class="detail-header">
+
+<h1>🏛️ Hampi</h1>
+
+<p>Karnataka, India</p>
+
+</div>
+
+
+<div class="detail-content">
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>About Hampi</h2>
+
+<p>
+Hampi is a historic heritage site located in Karnataka.
+It contains the remains of temples, palaces, markets,
+fortifications and other structures associated with the
+Vijayanagara Empire.
+</p>
+
+<p>
+The landscape of Hampi combines large granite boulders,
+river surroundings and historic architecture, creating a
+distinctive cultural landscape.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Hampi%2C%20Karnataka%2C%20India%201.jpg"
+alt="Hampi">
+
+</div>
+
+</div>
+
+
+<div class="location-box">
+
+<h3>📍 Location</h3>
+
+<p>
+Vijayanagara district, Karnataka, India
+</p>
+
+</div>
+
+
+<div class="info-section reverse">
+
+<div class="text">
+
+<h2>📜 History</h2>
+
+<p>
+Hampi was the capital of the Vijayanagara Empire and became
+an important center of political power, trade and culture.
+</p>
+
+<p>
+The city developed into a major urban and religious center
+with temples, royal buildings, markets and water systems.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Hampi%20Karnataka.JPG"
+alt="Hampi history">
+
+</div>
+
+</div>
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>🏛️ Architecture</h2>
+
+<p>
+Hampi is famous for its stone temples, tall gateways,
+sculpted pillars, royal courtyards and large monuments.
+</p>
+
+<p>
+The architecture shows the skill of South Indian craftsmen
+and the importance of temple-centered urban planning.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Hampi%20India.jpg"
+alt="Hampi architecture">
+
+</div>
+
+</div>
+
+
+<div class="fact-box">
+
+<h3>⭐ Interesting Facts</h3>
+
+<ul>
+
+<li>Hampi was the capital of the Vijayanagara Empire.</li>
+
+<li>It contains many temples and historic structures.</li>
+
+<li>The Tungabhadra River is closely associated with the area.</li>
+
+<li>Hampi is known for its distinctive rocky landscape.</li>
+
+</ul>
+
+</div>
+
+
+<button class="back-button" onclick="showHome()">
+⬅ Back to Heritage India
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     KONARK
+====================================================== -->
+
+<div class="detail-page" id="konark">
+
+<div class="detail-header">
+
+<h1>☀️ Konark Sun Temple</h1>
+
+<p>Konark, Odisha, India</p>
+
+</div>
+
+
+<div class="detail-content">
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>About Konark Sun Temple</h2>
+
+<p>
+The Konark Sun Temple is a magnificent historic temple
+dedicated to Surya, the Sun God. It is famous for its
+stone chariot design and detailed sculptures.
+</p>
+
+<p>
+The monument is one of the finest examples of Kalinga
+architecture and demonstrates the artistic achievements
+of medieval Odisha.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/KONARK%20SUN%20Temple.jpg"
+alt="Konark Sun Temple">
+
+</div>
+
+</div>
+
+
+<div class="location-box">
+
+<h3>📍 Location</h3>
+
+<p>
+Konark, Puri district, Odisha, India
+</p>
+
+</div>
+
+
+<div class="info-section reverse">
+
+<div class="text">
+
+<h2>📜 History</h2>
+
+<p>
+The temple was built in the 13th century during the reign
+of King Narasimhadeva I of the Eastern Ganga dynasty.
+</p>
+
+<p>
+The temple complex was designed to represent the chariot
+of the Sun God moving across the sky.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/20200213%20Konark%20Sun%20Temple.jpg"
+alt="Konark history">
+
+</div>
+
+</div>
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>🏛️ Architecture</h2>
+
+<p>
+The temple is famous for its large stone wheels, carved
+horses and detailed sculptures. The wheels contain
+elaborate patterns and artistic designs.
+</p>
+
+<p>
+The stone carvings show the extraordinary craftsmanship
+of the artisans of medieval Odisha.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Sunset%20at%20Konark%20Sun%20Temple%2C%20Odisha.jpg"
+alt="Konark architecture">
+
+</div>
+
+</div>
+
+
+<div class="fact-box">
+
+<h3>⭐ Interesting Facts</h3>
+
+<ul>
+
+<li>The temple is dedicated to the Sun God.</li>
+
+<li>It was built during the Eastern Ganga period.</li>
+
+<li>The monument is famous for its stone wheels.</li>
+
+<li>It is an important example of Kalinga architecture.</li>
+
+</ul>
+
+</div>
+
+
+<button class="back-button" onclick="showHome()">
+⬅ Back to Heritage India
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     RED FORT
+====================================================== -->
+
+<div class="detail-page" id="redfort">
+
+<div class="detail-header">
+
+<h1>🏰 Red Fort</h1>
+
+<p>Delhi, India</p>
+
+</div>
+
+
+<div class="detail-content">
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>About Red Fort</h2>
+
+<p>
+The Red Fort is a massive historic fort complex located
+in Old Delhi. It is famous for its red sandstone walls,
+large gateways, royal halls and gardens.
+</p>
+
+<p>
+The fort was an important imperial residence during the
+Mughal period.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Red%20Fort%20in%20Delhi%2003-2016%20img3.jpg"
+alt="Red Fort">
+
+</div>
+
+</div>
+
+
+<div class="location-box">
+
+<h3>📍 Location</h3>
+
+<p>
+Old Delhi, Delhi, India
+</p>
+
+</div>
+
+
+<div class="info-section reverse">
+
+<div class="text">
+
+<h2>📜 History</h2>
+
+<p>
+The Red Fort was commissioned by Mughal emperor Shah Jahan
+when he established Shahjahanabad as his new capital.
+</p>
+
+<p>
+It served as an important royal residence and administrative
+center during the Mughal period.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Red%20Fort%20Delhi.jpg"
+alt="Red Fort Delhi">
+
+</div>
+
+</div>
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>🏛️ Architecture</h2>
+
+<p>
+The fort is built mainly from red sandstone and contains
+large gateways, audience halls, gardens and decorative
+marble work.
+</p>
+
+<p>
+Its architecture combines functional fortification with
+ornamental palace design.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Red%20Fort%20Lahore%20Gate.jpg"
+alt="Red Fort Gate">
+
+</div>
+
+</div>
+
+
+<div class="fact-box">
+
+<h3>⭐ Interesting Facts</h3>
+
+<ul>
+
+<li>The fort is located in Old Delhi.</li>
+
+<li>It was built during the Mughal period.</li>
+
+<li>Red sandstone is a major building material.</li>
+
+<li>The fort contains several important royal structures.</li>
+
+</ul>
+
+</div>
+
+
+<button class="back-button" onclick="showHome()">
+⬅ Back to Heritage India
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     QUTUB MINAR
+====================================================== -->
+
+<div class="detail-page" id="qutub">
+
+<div class="detail-header">
+
+<h1>🕌 Qutub Minar</h1>
+
+<p>Delhi, India</p>
+
+</div>
+
+
+<div class="detail-content">
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>About Qutub Minar</h2>
+
+<p>
+Qutub Minar is a historic tower located in the Qutub complex
+in Delhi. It is famous for its tall structure, red sandstone
+surfaces and carved inscriptions.
+</p>
+
+<p>
+The surrounding complex contains several other important
+medieval monuments.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Qutb%20Minar%20Delhi.jpg"
+alt="Qutub Minar">
+
+</div>
+
+</div>
+
+
+<div class="location-box">
+
+<h3>📍 Location</h3>
+
+<p>
+Mehrauli, Delhi, India
+</p>
+
+</div>
+
+
+<div class="info-section reverse">
+
+<div class="text">
+
+<h2>📜 History</h2>
+
+<p>
+Construction of the Qutub Minar complex began during the
+early Delhi Sultanate period. The monument developed
+through different stages.
+</p>
+
+<p>
+It became an important landmark of medieval Delhi and
+remains an important part of the city's historical landscape.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Qutub%20Minar%20in%20Delhi.jpg"
+alt="Qutub Minar Delhi">
+
+</div>
+
+</div>
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>🏛️ Architecture</h2>
+
+<p>
+The tower is known for its vertical form, projecting
+balconies, fluted surfaces and carved inscriptions.
+</p>
+
+<p>
+The complex surrounding the tower includes gateways,
+mosques and other historic structures.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Qutub%20Minar%20Complex.jpg"
+alt="Qutub Minar Complex">
+
+</div>
+
+</div>
+
+
+<div class="fact-box">
+
+<h3>⭐ Interesting Facts</h3>
+
+<ul>
+
+<li>Qutub Minar is located in Delhi.</li>
+
+<li>It is associated with the Delhi Sultanate period.</li>
+
+<li>The tower contains carved inscriptions.</li>
+
+<li>The surrounding complex contains several monuments.</li>
+
+</ul>
+
+</div>
+
+
+<button class="back-button" onclick="showHome()">
+⬅ Back to Heritage India
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     AJANTA CAVES
+====================================================== -->
+
+<div class="detail-page" id="ajanta">
+
+<div class="detail-header">
+
+<h1>🪨 Ajanta Caves</h1>
+
+<p>Maharashtra, India</p>
+
+</div>
+
+
+<div class="detail-content">
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>About Ajanta Caves</h2>
+
+<p>
+The Ajanta Caves are a group of rock-cut Buddhist monuments
+in Maharashtra. They are famous for ancient paintings,
+sculptures, monasteries and prayer halls.
+</p>
+
+<p>
+The caves provide valuable information about ancient Indian
+religious traditions and artistic development.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Ajanta%20Caves%2C%20India.jpg"
+alt="Ajanta Caves">
+
+</div>
+
+</div>
+
+
+<div class="location-box">
+
+<h3>📍 Location</h3>
+
+<p>
+Aurangabad region, Maharashtra, India
+</p>
+
+</div>
+
+
+<div class="info-section reverse">
+
+<div class="text">
+
+<h2>📜 History</h2>
+
+<p>
+The caves were created during different periods of ancient
+Indian history and became an important center of Buddhist
+religious and artistic activity.
+</p>
+
+<p>
+The paintings and sculptures provide evidence of the culture,
+clothing, traditions and artistic practices of ancient India.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Ajanta%20Caves%20India.jpg"
+alt="Ajanta history">
+
+</div>
+
+</div>
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>🎨 Art and Architecture</h2>
+
+<p>
+The caves contain murals, sculptures, pillars, monasteries
+and prayer halls. Their paintings are particularly important
+examples of ancient Indian artistic traditions.
+</p>
+
+<p>
+The rock-cut architecture demonstrates the skill of ancient
+craftsmen.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Ajanta%20caves%20view.jpg"
+alt="Ajanta view">
+
+</div>
+
+</div>
+
+
+<div class="fact-box">
+
+<h3>⭐ Interesting Facts</h3>
+
+<ul>
+
+<li>Ajanta is famous for ancient Buddhist art.</li>
+
+<li>The caves contain paintings and sculptures.</li>
+
+<li>The monuments were carved directly into rock.</li>
+
+<li>The site is located in Maharashtra.</li>
+
+</ul>
+
+</div>
+
+
+<button class="back-button" onclick="showHome()">
+⬅ Back to Heritage India
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     ELLORA CAVES
+====================================================== -->
+
+<div class="detail-page" id="ellora">
+
+<div class="detail-header">
+
+<h1>🪨 Ellora Caves</h1>
+
+<p>Maharashtra, India</p>
+
+</div>
+
+
+<div class="detail-content">
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>About Ellora Caves</h2>
+
+<p>
+The Ellora Caves are a remarkable group of rock-cut monuments
+representing Buddhist, Hindu and Jain traditions.
+</p>
+
+<p>
+The complex contains temples, monasteries, sculptures and
+other architectural features created over several centuries.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Kailasa%20Temple%20at%20Ellora.jpg"
+alt="Ellora Caves">
+
+</div>
+
+</div>
+
+
+<div class="location-box">
+
+<h3>📍 Location</h3>
+
+<p>
+Verul, Maharashtra, India
+</p>
+
+</div>
+
+
+<div class="info-section reverse">
+
+<div class="text">
+
+<h2>📜 History</h2>
+
+<p>
+The caves developed over several centuries. Different
+religious communities contributed to the complex.
+</p>
+
+<p>
+This makes Ellora an important example of India's long
+tradition of diverse religious and artistic expression.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Ellora%20Caves%20India.jpg"
+alt="Ellora history">
+
+</div>
+
+</div>
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>🏛️ Kailasa Temple</h2>
+
+<p>
+The Kailasa Temple is one of the most remarkable monuments
+at Ellora. It was carved directly into the rock and contains
+large sculptures and detailed architectural features.
+</p>
+
+<p>
+Its scale and craftsmanship demonstrate the extraordinary
+skill of the builders and sculptors.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Kailasa%20Temple%20at%20Ellora.jpg"
+alt="Kailasa Temple">
+
+</div>
+
+</div>
+
+
+<div class="fact-box">
+
+<h3>⭐ Interesting Facts</h3>
+
+<ul>
+
+<li>Ellora contains Buddhist, Hindu and Jain monuments.</li>
+
+<li>The caves were created over several centuries.</li>
+
+<li>The Kailasa Temple is a major attraction.</li>
+
+<li>The monuments are carved into rock.</li>
+
+</ul>
+
+</div>
+
+
+<button class="back-button" onclick="showHome()">
+⬅ Back to Heritage India
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CHARMINAR
+====================================================== -->
+
+<div class="detail-page" id="charminar">
+
+<div class="detail-header">
+
+<h1>🕌 Charminar</h1>
+
+<p>Hyderabad, Telangana, India</p>
+
+</div>
+
+
+<div class="detail-content">
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>About Charminar</h2>
+
+<p>
+Charminar is one of the most recognizable historical
+monuments of Hyderabad. It is famous for its four large
+arches and four minarets.
+</p>
+
+<p>
+The monument stands in the historic center of Hyderabad
+and is closely connected with the city's cultural identity.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Charminar%20Hyderabad.jpg"
+alt="Charminar">
+
+</div>
+
+</div>
+
+
+<div class="location-box">
+
+<h3>📍 Location</h3>
+
+<p>
+Old City, Hyderabad, Telangana, India
+</p>
+
+</div>
+
+
+<div class="info-section reverse">
+
+<div class="text">
+
+<h2>📜 History</h2>
+
+<p>
+Charminar was built in the late 16th century during the
+Qutb Shahi period and became an important landmark of Hyderabad.
+</p>
+
+<p>
+The surrounding area developed into a major center of
+commerce and urban life.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Charminar%20Hyderabad%20India.jpg"
+alt="Charminar Hyderabad">
+
+</div>
+
+</div>
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>🏛️ Architecture</h2>
+
+<p>
+The monument is organized around four grand arches and
+four minarets. Its design reflects the architectural
+traditions of the Qutb Shahi period.
+</p>
+
+<p>
+The structure has become one of the most recognizable
+symbols of Hyderabad.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Charminar%20at%20night.jpg"
+alt="Charminar at night">
+
+</div>
+
+</div>
+
+
+<div class="fact-box">
+
+<h3>⭐ Interesting Facts</h3>
+
+<ul>
+
+<li>Charminar is located in Hyderabad.</li>
+
+<li>It has four prominent minarets.</li>
+
+<li>It was built during the Qutb Shahi period.</li>
+
+<li>The surrounding area is famous for historic markets.</li>
+
+</ul>
+
+</div>
+
+
+<button class="back-button" onclick="showHome()">
+⬅ Back to Heritage India
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MYSORE PALACE
+====================================================== -->
+
+<div class="detail-page" id="mysore">
+
+<div class="detail-header">
+
+<h1>🏰 Mysore Palace</h1>
+
+<p>Mysuru, Karnataka, India</p>
+
+</div>
+
+
+<div class="detail-content">
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>About Mysore Palace</h2>
+
+<p>
+Mysore Palace is a magnificent royal residence located
+in Mysuru, Karnataka. It is famous for its grand halls,
+decorative interiors, domes and courtyards.
+</p>
+
+<p>
+The palace is one of the most recognizable landmarks
+of the city.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Mysore%20Palace%20Mysore%20India.jpg"
+alt="Mysore Palace">
+
+</div>
+
+</div>
+
+
+<div class="location-box">
+
+<h3>📍 Location</h3>
+
+<p>
+Mysuru, Karnataka, India
+</p>
+
+</div>
+
+
+<div class="info-section reverse">
+
+<div class="text">
+
+<h2>📜 History</h2>
+
+<p>
+The palace is associated with the Wadiyar dynasty and has
+undergone rebuilding and architectural changes over time.
+</p>
+
+<p>
+The present palace combines elements from different
+architectural traditions.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Mysore%20Palace%20at%20night.jpg"
+alt="Mysore Palace night">
+
+</div>
+
+</div>
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>🏛️ Architecture</h2>
+
+<p>
+The palace contains grand halls, decorative arches,
+domes, ornamental details and large courtyards.
+</p>
+
+<p>
+Its architecture reflects the royal history and artistic
+traditions of Mysuru.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Mysore%20Palace%20front.jpg"
+alt="Mysore Palace front">
+
+</div>
+
+</div>
+
+
+<div class="fact-box">
+
+<h3>⭐ Interesting Facts</h3>
+
+<ul>
+
+<li>Mysore Palace is located in Mysuru, Karnataka.</li>
+
+<li>It is associated with the Wadiyar dynasty.</li>
+
+<li>The palace is known for its grand architecture.</li>
+
+<li>It is closely connected with Mysuru's Dasara celebrations.</li>
+
+</ul>
+
+</div>
+
+
+<button class="back-button" onclick="showHome()">
+⬅ Back to Heritage India
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     SANCHI STUPA
+====================================================== -->
+
+<div class="detail-page" id="sanchi">
+
+<div class="detail-header">
+
+<h1>☸️ Sanchi Stupa</h1>
+
+<p>Sanchi, Madhya Pradesh, India</p>
+
+</div>
+
+
+<div class="detail-content">
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>About Sanchi Stupa</h2>
+
+<p>
+Sanchi is an important Buddhist heritage site famous for
+its stupas, gateways, monasteries and stone carvings.
+</p>
+
+<p>
+The Great Stupa is one of the most important monuments
+at the site and represents an important development in
+Buddhist architecture.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Sanchi%20Stupa.jpg"
+alt="Sanchi Stupa">
+
+</div>
+
+</div>
+
+
+<div class="location-box">
+
+<h3>📍 Location</h3>
+
+<p>
+Sanchi, Raisen district, Madhya Pradesh, India
+</p>
+
+</div>
+
+
+<div class="info-section reverse">
+
+<div class="text">
+
+<h2>📜 History</h2>
+
+<p>
+The monuments at Sanchi developed over many centuries.
+The site became an important center of Buddhist art,
+architecture and religious activity.
+</p>
+
+<p>
+The complex contains structures from different historical
+periods.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Sanchi%20Stupa%20Madhya%20Pradesh.jpg"
+alt="Sanchi history">
+
+</div>
+
+</div>
+
+
+<div class="info-section">
+
+<div class="text">
+
+<h2>🏛️ Architecture</h2>
+
+<p>
+The Great Stupa is surrounded by beautifully carved stone
+gateways. These gateways contain detailed artistic
+representations and symbols associated with Buddhist traditions.
+</p>
+
+<p>
+The monument demonstrates the development of early Buddhist
+architecture in India.
+</p>
+
+</div>
+
+<div class="image">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:FilePath/Sanchi%20Gateway.jpg"
+alt="Sanchi Gateway">
+
+</div>
+
+</div>
+
+
+<div class="fact-box">
+
+<h3>⭐ Interesting Facts</h3>
+
+<ul>
+
+<li>Sanchi is located in Madhya Pradesh.</li>
+
+<li>The site is closely associated with Buddhism.</li>
+
+<li>The Great Stupa is its most famous monument.</li>
+
+<li>The gateways contain detailed stone carvings.</li>
+
+</ul>
+
+</div>
+
+
+<button class="back-button" onclick="showHome()">
+⬅ Back to Heritage India
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+/* ==========================================
+   OPEN A SPECIFIC PLACE
+========================================== */
+
+function showPlace(placeName) {
+
+    document.getElementById("homePage").style.display = "none";
+
+    const pages = document.querySelectorAll(".detail-page");
+
+    pages.forEach(function(page) {
+
+        page.style.display = "none";
+
+    });
+
+    document.getElementById(placeName).style.display = "block";
+
+    window.scrollTo(0,0);
+
+}
+
+
+/* ==========================================
+   GO BACK TO HOME
+========================================== */
+
+function showHome() {
+
+    document.getElementById("homePage").style.display = "block";
+
+    const pages = document.querySelectorAll(".detail-page");
+
+    pages.forEach(function(page) {
+
+        page.style.display = "none";
+
+    });
+
+    window.scrollTo(0,0);
+
+}
+
+
+/* ==========================================
+   SEARCH PLACES
+========================================== */
+
+function searchPlaces() {
+
+    const searchText =
+        document.getElementById("searchBox")
+        .value
+        .toLowerCase()
+        .trim();
+
+
+    const cards =
+        document.querySelectorAll(".place-card");
+
+
+    let found = false;
+
+
+    cards.forEach(function(card) {
+
+        const name =
+            card.querySelector("h3")
+            .textContent
+            .toLowerCase();
+
+
+        const location =
+            card.querySelector("p")
+            .textContent
+            .toLowerCase();
+
+
+        if (
+            name.includes(searchText) ||
+            location.includes(searchText)
+        ) {
+
+            card.style.display = "block";
+
+            found = true;
+
+        }
+
+        else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+
+    const noResult =
+        document.getElementById("noResult");
+
+
+    if (
+        !found &&
+        searchText !== ""
+    ) {
+
+        noResult.style.display = "block";
+
+    }
+
+    else {
+
+        noResult.style.display = "none";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+```
